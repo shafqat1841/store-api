@@ -11,6 +11,9 @@ const errorMiddlerware = require("./middlerware/errorMiddlerware")
 
 app.use(express.json())
 
+app.use("/", (req, res) => {
+	res.status(200).send("<h1>how to use</h1>")
+})
 app.use("/api/v1/products", productRoutes)
 
 app.use(errorMiddlerware)
